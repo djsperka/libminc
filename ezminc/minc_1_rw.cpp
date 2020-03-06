@@ -16,6 +16,7 @@
 #include <iostream>
 #include <sstream>
 #include <string.h>
+#include <algorithm>
 //minc stuff
 #include <math.h>
 #include <limits.h>
