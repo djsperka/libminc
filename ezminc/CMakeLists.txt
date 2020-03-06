@@ -18,6 +18,12 @@ SET( MINC_IO_SRC
     minc_1_simple_rw.cpp
   )
 
+#DJS - on windows, inclusion of windows.h causes conflict with "min" and "max" in stdlib. 
+# This definition will suppress the declaration in windows.h
+IF (WIN32)
+	ADD_DEFINITIONS(-DNOMINMAX)
+ENDIF (WIN32)
+
 INCLUDE_DIRECTORIES( ${CMAKE_CURRENT_SOURCE_DIR})
 ADD_LIBRARY( minc_io ${LIBRARY_TYPE} ${MINC_IO_HEADERS} ${MINC_IO_SRC})
 TARGET_LINK_LIBRARIES(minc_io ${LIBMINC_LIBRARIES})
