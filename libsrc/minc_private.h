@@ -69,10 +69,19 @@
 /* If we are building on the Microsoft C compiler, we want to
  * explicitly export all public functions from the DLL
  */
+#if defined(LIBMINC_BUILDING_SHARED_LIBRARY)
 #define MNCAPI __declspec(dllexport)
+#else
+#define MNCAPI 
+#endif
 #else
 #define MNCAPI
 #endif
+
+// define this so minc.h knows we've done something here. 
+// This file should be included first (BEFORE minc.h) in source files in the lib, so 
+// declarations have correct linkage (dllexport or not)
+#define MNCAPI_DEFINED 1
 
 #include "config.h"
 #define _GNU_SOURCE 1         /* Include all BSD & GNU interfaces */

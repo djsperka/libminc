@@ -33,7 +33,8 @@ static int micopy(int old_fd, int new_fd)
     return MI_NOERROR;
 }
 
-MNCAPI int minc_format_convert(const char *input,const char *output)
+// DJS build error on windows if this in definition below. MNCAPI 
+int minc_format_convert(const char *input,const char *output)
 {
     int old_fd;
     int new_fd;

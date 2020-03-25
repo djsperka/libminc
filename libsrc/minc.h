@@ -155,7 +155,7 @@
 @RCSID      : $Header: /private-cvsroot/minc/libsrc/minc.h,v 6.21 2010-05-19 03:44:25 stever Exp $ MINC (MNI)
 ---------------------------------------------------------------------------- */
 
-#ifndef MNCAPI
+#ifndef MNCAPI_DEFINED
 #if defined(_MSC_VER)
 /* If we are building on the Microsoft C compiler, we want to
  * explicitly import all public functions from the DLL
@@ -164,7 +164,7 @@
 #else
 #define MNCAPI
 #endif /* _MSC_VER not defined */
-#endif /* MNCAPI not defined */
+#endif /* MNCAPI_DEFINED  */
 
 #if MINC2
 #include <hdf5.h>
