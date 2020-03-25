@@ -154,7 +154,7 @@
 #include "minc_varlists.h"
 
 #include <time.h>
-
+#include <WinSock2.h>
 #if HAVE_UNISTD_H
 #include <unistd.h>             /* for getpid() */
 #endif /* HAVE_UNISTD_H */
