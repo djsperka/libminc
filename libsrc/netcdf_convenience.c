@@ -223,6 +223,14 @@ static int mi_h5_files = 0;
 
 #endif /* MINC2 defined */
 
+
+/* DJS hack - don't know where these vars are. They seem to be globals 
+ * from netcdf but they're hard to find there, and I'm under pandemic lockdown
+ * and well, this might have a negative impact on minc volume functionality. 
+ * Big whoop. 
+ */
+int ncerr = 0;
+int ncopts = 0;
 /* ----------------------------- MNI Header -----------------------------------
 @NAME       : execute_decompress_command
 @INPUT      : command - command to execute
